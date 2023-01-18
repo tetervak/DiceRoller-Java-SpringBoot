@@ -30,8 +30,7 @@
             <select id="c" th:name="numberOfDice">
                 <option th:each="i : ${#numbers.sequence(1, 5)}"
                         th:selected="${i == rollData.numberOfDice}"
-                        th:value="${i}" th:text="${i}">1
-                </option>
+                        th:value="${i}" th:text="${i}">1</option>
                 <!--/*-->
                 <option>2</option>
                 <option selected>3</option>
@@ -47,7 +46,7 @@
     </form>
 </main>
 <footer>
-    Sheridan College&nbsp;&nbsp;<span class='hart'>&#9825;</span>&nbsp;&nbsp;2022
+    Sheridan College&nbsp;&nbsp;<span class='hart'>&#9825;</span>&nbsp;&nbsp;2023
 </footer>
 </body>
 </html>
