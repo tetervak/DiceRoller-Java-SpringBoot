@@ -1,22 +1,27 @@
 package ca.tetervak.diceroller.model;
 
+import ca.tetervak.diceroller.service.DiceRollData;
+
 import java.util.Collections;
 import java.util.List;
 
-public class RollData {
+public class RollData implements DiceRollData {
 
     private final List<Integer> values;
 
+    @Override
     public List<Integer> getValues() {
         return values;
     }
 
+    @Override
     public int getNumberOfDice(){
         return values.size();
     }
 
     private final int total;
 
+    @Override
     public int getTotal() {
         return total;
     }

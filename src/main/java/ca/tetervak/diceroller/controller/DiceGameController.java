@@ -1,6 +1,6 @@
 package ca.tetervak.diceroller.controller;
 
-import ca.tetervak.diceroller.model.RollData;
+import ca.tetervak.diceroller.service.DiceRollData;
 import ca.tetervak.diceroller.service.DiceRollerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +31,7 @@ public class DiceGameController {
 
         if(isRolled){
             log.debug("dice is rolled");
-            RollData rollData;
+            DiceRollData rollData;
             if(numberOfDice > 0 && numberOfDice <= 5){
                 rollData = diceRollerService.getRollData(numberOfDice);
             }else{
