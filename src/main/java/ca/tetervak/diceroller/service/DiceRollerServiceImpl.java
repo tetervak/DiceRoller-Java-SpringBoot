@@ -23,7 +23,7 @@ public class DiceRollerServiceImpl implements DiceRollerService{
     public DiceRollData getRollData(int numberOfDice) {
 
         List<Integer> list = random
-                .ints(numberOfDice, 1, 6)
+                .ints(numberOfDice, 1, 7)
                 .boxed()
                 .collect(Collectors.toList());
 
