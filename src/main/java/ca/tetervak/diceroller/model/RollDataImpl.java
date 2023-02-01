@@ -1,9 +1,9 @@
-package ca.tetervak.diceroller.service;
+package ca.tetervak.diceroller.model;
 
 import java.util.Collections;
 import java.util.List;
 
-public class DiceRollDataImpl implements DiceRollData {
+public class RollDataImpl implements RollData {
 
     private final List<Integer> values;
 
@@ -24,7 +24,7 @@ public class DiceRollDataImpl implements DiceRollData {
         return total;
     }
 
-    public DiceRollDataImpl(List<Integer> values) {
+    public RollDataImpl(List<Integer> values) {
         this.values = Collections.unmodifiableList(values);
         int sum = 0;
         for(int value: values){
