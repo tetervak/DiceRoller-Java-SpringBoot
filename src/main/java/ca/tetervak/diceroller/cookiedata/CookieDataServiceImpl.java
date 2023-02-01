@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CookieDataService1 implements CookieDataService{
+public class CookieDataServiceImpl implements CookieDataService{
     @Override
     public String encodeRollData(RollData rollData) {
         List<Integer> values = rollData.getValues();

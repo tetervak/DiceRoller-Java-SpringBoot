@@ -9,10 +9,10 @@ import java.util.List;
 import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.*;
 
-class CookieDataService3Test {
+class CookieDataServiceImplTest {
 
-    List<Integer> inputList = List.of(2, 6, 12, 10, 7, 1);
-    CookieDataService service = new CookieDataService3();
+    List<Integer> inputList = List.of(2, 6, 2, 1, 7, 1);
+    CookieDataService service = new CookieDataServiceImpl();
 
     @Test
     void encodeRollData() {

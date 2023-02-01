@@ -25,7 +25,7 @@ public class GameController {
 
     public GameController(
             RollerService rollerService,
-            @Qualifier("cookieDataService1") CookieDataService cookieDataService) {
+            @Qualifier("cookieDataServiceImpl") CookieDataService cookieDataService) {
         this.rollerService = rollerService;
         this.cookieDataService = cookieDataService;
     }
