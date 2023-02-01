@@ -25,7 +25,7 @@ public class GameController {
 
     public GameController(
             RollerService rollerService,
-            @Qualifier("cookieDataServiceImpl") CookieDataService cookieDataService) {
+            CookieDataService cookieDataService) {
         this.rollerService = rollerService;
         this.cookieDataService = cookieDataService;
     }
@@ -54,6 +54,7 @@ public class GameController {
             Cookie cookie = new Cookie(
                     "rollData",
                     cookieDataService.encodeRollData(rollData));
+            cookie.setMaxAge(24*60*60);
             response.addCookie(cookie);
             return  new ModelAndView("GameResult", "rollData", rollData);
         }else{
