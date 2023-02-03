@@ -64,8 +64,13 @@ public class GameController {
                 return new ModelAndView("GameStart");
             }else{
                 log.debug("restoring previous state from the cookie");
-                RollData rollData = cookieDataService.decodeRollData(cookieValue);
-                return new ModelAndView("GameResult", "rollData", rollData);
+                try{
+                    RollData rollData = cookieDataService.decodeRollData(cookieValue);
+                    return new ModelAndView("GameResult", "rollData", rollData);
+                }catch(Exception e){
+                    log.error("could not recover the data from the cookie");
+                    return new ModelAndView("GameStart");
+                }
             }
         }
     }
