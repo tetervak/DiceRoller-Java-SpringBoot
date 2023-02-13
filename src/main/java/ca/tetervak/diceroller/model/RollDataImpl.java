@@ -35,6 +35,9 @@ public class RollDataImpl implements RollData {
 
     @Override
     public String toString(){
-        return "RollData(values = " + values + ", total = " + getTotal() + ")";
+        return String.format(
+                "RollData(values = %s, total = %d, numberOfDice = %d)",
+                values, total, getNumberOfDice()
+        );
     }
 }
