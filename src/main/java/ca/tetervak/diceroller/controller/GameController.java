@@ -25,7 +25,7 @@ public class GameController {
 
     public GameController(
             RollerService rollerService,
-            @Qualifier("cookieDataServiceImpl") CookieDataService cookieDataService) {
+            CookieDataService cookieDataService) {
         this.rollerService = rollerService;
         this.cookieDataService = cookieDataService;
     }
@@ -54,6 +54,7 @@ public class GameController {
             Cookie cookie = new Cookie(
                     "rollData",
                     cookieDataService.encodeRollData(rollData));
+            cookie.setMaxAge(24*60*60);
             response.addCookie(cookie);
             return  new ModelAndView("GameResult", "rollData", rollData);
         }else{
@@ -63,8 +64,13 @@ public class GameController {
                 return new ModelAndView("GameStart");
             }else{
                 log.debug("restoring previous state from the cookie");
-                RollData rollData = cookieDataService.decodeRollData(cookieValue);
-                return new ModelAndView("GameResult", "rollData", rollData);
+                try{
+                    RollData rollData = cookieDataService.decodeRollData(cookieValue);
+                    return new ModelAndView("GameResult", "rollData", rollData);
+                }catch(Exception e){
+                    log.error("could not recover the data from the cookie");
+                    return new ModelAndView("GameStart");
+                }
             }
         }
     }
