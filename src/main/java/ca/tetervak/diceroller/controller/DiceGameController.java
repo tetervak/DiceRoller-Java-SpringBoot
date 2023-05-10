@@ -8,21 +8,24 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 
-@Controller
-public class GameController {
+import java.time.LocalDate;
 
-    private final Logger log = LoggerFactory.getLogger(GameController.class);
+@Controller
+public class DiceGameController {
+
+    private final Logger log = LoggerFactory.getLogger(DiceGameController.class);
 
     private final RollerService rollerService;
     private final CookieDataService cookieDataService;
 
-    public GameController(
+    public DiceGameController(
             RollerService rollerService,
             CookieDataService cookieDataService) {
         this.rollerService = rollerService;
@@ -72,6 +75,11 @@ public class GameController {
                 }
             }
         }
+    }
+
+    @ModelAttribute("localDate")
+    LocalDate getlLocalDate(){
+        return LocalDate.now();
     }
 
 }
