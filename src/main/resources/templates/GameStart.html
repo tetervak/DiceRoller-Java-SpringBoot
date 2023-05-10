@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+    <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
     <link rel="stylesheet" href="../static/css/footer.css" th:href="@{css/footer.css}">
-    <title>Dice</title>
+    <title>Dice Roller</title>
 </head>
 <body>
-<header>
-    <h1>Dice Roller</h1>
+<header th:replace="~{HeaderAndFooter::Header}">
+    <h1>Some header text</h1>
 </header>
 <main>
     <h2>Roll the Dice</h2>
@@ -29,8 +30,8 @@
         </p>
     </form>
 </main>
-<footer>
-    Sheridan College&nbsp;&nbsp;<span class='hart'>&#9825;</span>&nbsp;&nbsp;2023
+<footer th:replace="~{HeaderAndFooter::footer}">
+    Some footer text
 </footer>
 </body>
 </html>
