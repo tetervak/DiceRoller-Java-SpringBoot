@@ -2,9 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
     <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
-    <link rel="stylesheet" href="../static/css/footer.css" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" href="../static/css/footer.css" th:href="@{css/footer.css}">
     <title>Dice Roller</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
 </header>
 <main>
     <h2>Roll the Dice</h2>
-    <form action="GameResult.html" th:action="@{/dice-game}">
+    <form action="GameResult.html" th:action="@{dice-game}">
         <p>
             <label for="c">Number of Dice:</label>
             <select id="c" th:name="numberOfDice">
