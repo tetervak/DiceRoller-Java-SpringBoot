@@ -77,6 +77,15 @@ public class DiceGameController {
         }
     }
 
+    @GetMapping("/reset")
+    public String reset(HttpServletResponse response){
+        // remove the cookie and redirect to the default page
+        Cookie cookie = new Cookie("rollData","whatever");
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        return "redirect:/";
+    }
+
     @ModelAttribute("localDate")
     LocalDate getlLocalDate(){
         return LocalDate.now();
