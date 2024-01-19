@@ -9,15 +9,15 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 @Service
-public class RollerServiceStream implements RollerService {
+public class RollerServiceImpl1 implements RollerService {
 
     private final Random random;
 
-    public RollerServiceStream(Random random) {
+    public RollerServiceImpl1(Random random) {
         this.random = random;
     }
 
-    public RollerServiceStream() {
+    public RollerServiceImpl1() {
         this(new Random());
     }
 

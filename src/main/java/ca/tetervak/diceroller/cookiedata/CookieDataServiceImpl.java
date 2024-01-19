@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class CookieDataServiceStream implements CookieDataService{
+public class CookieDataServiceImpl implements CookieDataService{
     @Override
     public String encodeRollData(RollData rollData) {
         return rollData.getValues().stream()

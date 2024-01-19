@@ -5,6 +5,7 @@ import ca.tetervak.diceroller.model.RollData;
 import ca.tetervak.diceroller.domain.RollerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,8 +26,9 @@ public class DiceGameController {
     private final RollerService rollerService;
     private final CookieDataService cookieDataService;
 
+    // the qualifier is necessary only when there are more than one option
     public DiceGameController(
-            RollerService rollerService,
+            @Qualifier("rollerServiceImpl2") RollerService rollerService,
             CookieDataService cookieDataService) {
         this.rollerService = rollerService;
         this.cookieDataService = cookieDataService;
