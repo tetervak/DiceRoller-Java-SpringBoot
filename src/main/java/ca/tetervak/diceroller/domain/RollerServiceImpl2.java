@@ -2,6 +2,7 @@ package ca.tetervak.diceroller.domain;
 
 import ca.tetervak.diceroller.model.RollData;
 import ca.tetervak.diceroller.model.RollDataImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ public class RollerServiceImpl2 implements RollerService {
 
     private final Rollable rollable;
 
+    // @Autowired on top of the constructor is optional for injection
+    @Autowired
     public RollerServiceImpl2(Rollable rollable) {
         this.rollable = rollable;
     }
