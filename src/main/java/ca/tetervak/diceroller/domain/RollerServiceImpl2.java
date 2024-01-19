@@ -11,11 +11,15 @@ import java.util.List;
 @Service
 public class RollerServiceImpl2 implements RollerService {
 
-    private final Rollable rollable;
+    private Rollable rollable;
 
-    // @Autowired on top of the constructor is optional for injection
+    public RollerServiceImpl2() {
+    }
+
+    // @Autowired is required for the method injections
+    // use method injections only when constructor injection is not possible
     @Autowired
-    public RollerServiceImpl2(Rollable rollable) {
+    public void setRollable(Rollable rollable) {
         this.rollable = rollable;
     }
 
