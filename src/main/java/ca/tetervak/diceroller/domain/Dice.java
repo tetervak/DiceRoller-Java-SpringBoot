@@ -1,10 +1,8 @@
 package ca.tetervak.diceroller.domain;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Random;
 
-@Component
+
 public class Dice implements Rollable{
 
     public static final int INIT_VALUE = 1;

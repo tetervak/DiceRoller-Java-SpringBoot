@@ -28,7 +28,7 @@ public class DiceGameController {
 
     // the qualifier is necessary only when there are more than one option
     public DiceGameController(
-            @Qualifier("rollerServiceImpl2") RollerService rollerService,
+            @Qualifier("rollerService") RollerService rollerService,
             CookieDataService cookieDataService) {
         this.rollerService = rollerService;
         this.cookieDataService = cookieDataService;
