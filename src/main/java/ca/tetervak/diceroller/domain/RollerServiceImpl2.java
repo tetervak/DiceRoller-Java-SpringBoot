@@ -11,16 +11,12 @@ import java.util.List;
 @Service
 public class RollerServiceImpl2 implements RollerService {
 
+    // @Autowired is required for the field injections
+    // do not use field injections outside of JUnit test classes
+    @Autowired
     private Rollable rollable;
 
     public RollerServiceImpl2() {
-    }
-
-    // @Autowired is required for the method injections
-    // use method injections only when constructor injection is not possible
-    @Autowired
-    public void setRollable(Rollable rollable) {
-        this.rollable = rollable;
     }
 
     public RollData getRollData(int numberOfDice) {
